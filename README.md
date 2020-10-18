@@ -1,2 +1,35 @@
 # Werkspot-DE-Challenge
 Data pipeline to create Fact,Dimensions and snapshot tables.
+
+1) Python Libraries used:
+
+pandas
+numpy
+re
+psycopg2 : To connect to postgres
+sqlalchemy : To convert pandas to postgres tables
+
+2) Database used:  Postgresql version- 10.14
+Schema  created: WERKSPOT_DB
+Connection details passed as parameters through config file
+database="postgres", user='postgres', password='admin', host='127.0.0.1', port= '5432'
+
+3) Dimension model : Attached excel consisting the fact and dimensions created for Challenge 1.
+
+4) For Challenge 1:
+
+Based on the dimensional model created,I have created a python script to read and convert the .csv file into necessary fact and dimension tables.I have applied the necessary transformations to convert the .csv into respective fact and dimensions and have loaded into postgres tables.
+
+5) For challenge 2: 
+Based on the instructions provided in the word document, I have written a sql script which will refresh the AVAILABILITY_SNAPSHOT table and have called the query through a python script.
+One assumption based on the point 2 of the note, if a professional_id=1 is became_able_to_propose at time '2020-01-01 10:00:00' 
+and became_not_able_to_propose at time '2020-01-01 12:00:00'  then he would be considered inactive for that day.
+
+
+6) Aspects on which the code can be further improved:
+1. Parameterize the path in code  on which the .csv is placed.
+2. Parameterize the connection details for postgres database.
+3. As of now the code drop creates the fact and dimensions tables. Code improvement can be done to incrementally load these tables.
+4. Primary key and foreign key constraints have not been applied at the table level.
+5. Security aspects such as having the correct permissions at table level can also be implemented.
+6.  Error handling in the code to capture errors at various stages for example  while loading data into the table can also be implemented.
