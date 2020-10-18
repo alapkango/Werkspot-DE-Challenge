@@ -18,7 +18,7 @@ c) Connection details passed as parameters through config file
 4) For Challenge 1:
 Based on the dimensional model created,I have created a python script to read and convert the .csv file into necessary fact and dimension tables.I have applied the necessary transformations to convert the .csv into respective fact and dimensions and have loaded into postgres tables.
 
-5) For challenge 2: 
+5) For Challenge 2: 
 Based on the instructions provided in the word document, I have written a sql script which will refresh the AVAILABILITY_SNAPSHOT table and have called the query through a python script.
 One assumption based on the point 2 of the note, if a professional_id=1 is became_able_to_propose at time '2020-01-01 10:00:00' and became_not_able_to_propose at time '2020-01-01 12:00:00' then he would be considered inactive for that day.
 
